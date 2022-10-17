@@ -17,7 +17,7 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   const fetchFeedback = async () => {
-    const response = await fetch('http://localhost:8000/feedback?_sort=id&_order=desc')
+    const response = await fetch('/feedback?_sort=id&_order=desc')
     const data = await response.json()
     setItems(data)
     setIsLoading(false)
@@ -25,7 +25,7 @@ export const FeedbackProvider = ({ children }) => {
 
   const addFeedback = async (newFeedback) => {
     //newFeedback.id = items.length + 1;
-    const response = await fetch('http://localhost:8000/feedback', {
+    const response = await fetch('/feedback', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export const FeedbackProvider = ({ children }) => {
 
   const deleteFeedback = async (itemId) => {
     if (window.confirm('Are you sure you want to remove the feedback')) {
-      await fetch(`http://localhost:8000/feedback/${itemId}`, { method: 'DELETE' })
+      await fetch(`/feedback/${itemId}`, { method: 'DELETE' })
 
       const newItems = items.filter(item => item.id !== itemId);
       setItems(newItems);
@@ -52,7 +52,7 @@ export const FeedbackProvider = ({ children }) => {
   };
 
   const updateFeedback = async (itemId, newItem) => {
-    const response = await fetch(`http://localhost:8000/feedback/${itemId}`,
+    const response = await fetch(`/feedback/${itemId}`,
       {
         method: 'PUT',
         headers: {
