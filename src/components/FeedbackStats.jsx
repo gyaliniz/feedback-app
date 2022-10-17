@@ -6,7 +6,7 @@ function FeedbackStats({items}) {
   return (
     <div className='stats-display'>
         <p>{items.length} Reviews</p>
-        <p>Average Rating {isNaN(average) ? 0 : average.toFixed(2)} </p>
+        <p>Average Rating {isNaN(average) ? 0 : average.toFixed(1).replace(/[.,]0$/, '')} </p>
     </div>
   )
 }
