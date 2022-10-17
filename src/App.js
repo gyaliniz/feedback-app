@@ -1,69 +1,37 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+
+import './index.css';
 
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import AboutIconLink from './components/AboutIconLink';
-
 import Header from './components/Header';
-import './index.css';
 import AboutPage from './components/pages/AboutPage';
 
-import FeedbackData from './data/FeedbackData';
+import { FeedbackProvider } from './context/FeedbackContext';
 
 function App() {
-  const [items, setItems] = useState(FeedbackData);
-  const [inEditItem, setInEditItem] = useState({
-    item:{},
-    isEditingEnabled: false
-  });
-
-  const addFeedback = (newFeedback) => {
-    console.log('add feedback');
-    newFeedback.id = items.length + 1;
-
-    setItems([newFeedback, ...items]);
-  };
-
-  const deleteFeedback = (itemId) => {
-    const newItems = items.filter(item => item.id !== itemId);
-    setItems(newItems);
-  };
-
-  const editFeedback = (item) => {
-    item.isEditingEnabled = true;
-    setInEditItem(item);
-  };
-
-  const updateFeedback = (itemId, newItem) => {
-    const newItems = items.map(item => item.id === itemId ? {...newItem, id: itemId} : item);
-    setItems(newItems);
-  };
-
   return (
-    <Router>
-      <Header />
-      <div className="container">
-        <Routes>
-
-          <Route exact path='/' element={
-            <>
-              <FeedbackForm addFeedback={addFeedback} updateFeedback={updateFeedback} inEditItem ={inEditItem} setInEditItem={setInEditItem} />
-              <FeedbackStats items={items} />
-              <FeedbackList items={items} deleteFeedback={deleteFeedback} editFeedback={editFeedback} />
-            </>
-          }> </Route>
-
-          <Route path='/about' element={<AboutPage />}> </Route>
-
-        </Routes>
-        <AboutIconLink />
-
-      </div>
-
-    </ Router>
+    <FeedbackProvider>
+      <Router>
+        <Header />
+        <div className="container">
+          <Routes>
+            <Route exact path='/' element={
+              <>
+                <FeedbackForm />
+                <FeedbackStats />
+                <FeedbackList />
+              </>
+            }> </Route>
+            <Route path='/about' element={<AboutPage />}> </Route>
+          </Routes>
+          <AboutIconLink />
+        </div>
+      </ Router>
+    </FeedbackProvider>
   );
-}
+};
 
 export default App;

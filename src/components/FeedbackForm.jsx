@@ -1,9 +1,12 @@
 import Card from "./shared/Card"
 import Button from "./shared/Button"
 import RatingSelect from "./RatingSelect"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
+import FeedbackContext from "../context/FeedbackContext"
 
-function FeedbackForm({addFeedback, inEditItem, setInEditItem, updateFeedback}) {
+function FeedbackForm() {
+  const {addFeedback, inEditItem, setInEditItem, updateFeedback} = useContext(FeedbackContext)
+
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
   const [btnDisable, setBtnDisable] = useState(true)
