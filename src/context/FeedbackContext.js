@@ -1,12 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 
-import FeedbackData from './../data/FeedbackData';
-
 const FeedbackContext = createContext()
 
 export const FeedbackProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
-  const [items, setItems] = useState(FeedbackData);
+  const [items, setItems] = useState([]);
   const [inEditItem, setInEditItem] = useState({
     item: {},
     isEditingEnabled: false
