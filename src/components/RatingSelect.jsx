@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RatingSelect({setRating}) {
+function RatingSelect({rating, setRating}) {
   const handleChange = ({target: {value}}) => {
     setRating(+value)
     console.log(value);
@@ -16,6 +16,7 @@ function RatingSelect({setRating}) {
             id={`num${i + 1}`}
             value={i + 1}
             onChange={handleChange}
+            checked= {rating === i + 1}
             />
            <label htmlFor={`num${i + 1}`}>{i + 1} </label> 
             </li>;

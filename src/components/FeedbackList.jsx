@@ -4,7 +4,7 @@ import FeedbackItem from './FeedbackItem'
 function FeedbackList({items, deleteFeedback, editFeedback}) {
   return (
     <div>
-        {items.map((item) => <FeedbackItem key={item.id} item={item} deleteFeedback={deleteFeedback} editFeedback={editFeedback}/>)}
+        {items.map((item) => <FeedbackItem item={item} key={item.id} deleteFeedback={deleteFeedback} editFeedback={editFeedback}/>)}
     </div>
   )
 }
