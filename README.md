@@ -8,4 +8,17 @@ This project is developed after completing React Front-to-Back 2022 course by Br
 3. run json-server `npm run server`
 4. start ui `npm start`
 
-Keywords: React, hook, useState, useContext, useEffects, CSS, json-server, fetch
+Keywords: React, hook, useState, useContext, useEffects, CSS, json-server, fetch.
+
+
+## Wide Screen
+
+![](./img/1.png)
+
+# Small Screen
+
+![](./img/2.png)
+
+# About Page
+
+![](./img/3.png)
