@@ -42,7 +42,7 @@ function FeedbackForm({addFeedback, inEditItem, setInEditItem, updateFeedback}) 
         rating,
       }
 
-      if(inEditItem.isEditingEnabled) {
+      if(inEditItem.isEditingEnabled === true) {
         updateFeedback(inEditItem.id, newFeedback);
         setInEditItem({
           item:{},
