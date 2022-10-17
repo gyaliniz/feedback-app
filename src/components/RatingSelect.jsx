@@ -3,7 +3,6 @@ import React from 'react'
 function RatingSelect({rating, setRating}) {
   const handleChange = ({target: {value}}) => {
     setRating(+value)
-    console.log(value);
   }
 
   return (

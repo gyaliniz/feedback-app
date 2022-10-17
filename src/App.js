@@ -37,7 +37,6 @@ function App() {
   };
 
   const updateFeedback = (itemId, newItem) => {
-    console.log(itemId, newItem)
     const newItems = items.map(item => item.id === itemId ? {...newItem, id: itemId} : item);
     setItems(newItems);
   };
