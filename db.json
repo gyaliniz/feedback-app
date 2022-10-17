@@ -1,28 +1,28 @@
 {
   "feedback": [
     {
-      "text": "wishes dishes",
+      "text": "This app is awesome",
       "rating": 10,
       "id": 9
     },
     {
-      "text": "Feeling lost",
-      "rating": 10,
+      "text": "You definetely need this app",
+      "rating": 7,
       "id": 12
     },
     {
-      "text": "BACKEND: It has some extra features 123456",
+      "text": "Do not forget to share with your friends",
       "rating": 8,
       "id": 13
     },
     {
-      "text": "tretsetsdasda",
-      "rating": 10,
+      "text": "I am not sure but, I like it",
+      "rating": 5,
       "id": 14
     },
     {
-      "text": "trest s3124124 12",
-      "rating": 10,
+      "text": "It has a few bugs, need to be fixed soon",
+      "rating": 3,
       "id": 15
     }
   ]
