@@ -2,15 +2,7 @@ import React from 'react'
 import Card from './shared/Card';
 import { FaTimes, FaEdit } from 'react-icons/fa'
 
-function FeedbackItem({item}) {
-
-    const deleteFeedback = () => {
-        console.log('delete feedback');
-    }
-
-    const editFeedback= () => {
-        console.log('edit feedback');
-    }
+function FeedbackItem({item, deleteFeedback, editFeedback}) {
 
     return (
         <Card>

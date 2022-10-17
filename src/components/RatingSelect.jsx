@@ -1,6 +1,11 @@
 import React from 'react'
 
-function RatingSelect() {
+function RatingSelect({setRating}) {
+  const handleChange = ({target: {value}}) => {
+    setRating(+value)
+    console.log(value);
+  }
+
   return (
     <ul className='rating'>
         {Array.from({length:10}, (_, i) => {
@@ -10,6 +15,7 @@ function RatingSelect() {
             name="rating" 
             id={`num${i + 1}`}
             value={i + 1}
+            onChange={handleChange}
             />
            <label htmlFor={`num${i + 1}`}>{i + 1} </label> 
             </li>;

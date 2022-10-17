@@ -17,6 +17,19 @@ function App() {
     { id: 3, rating: 1, text: 'This is a feedback item 3' },
   ]
 
+
+  const addFeedback = () => {
+    console.log('add feedback');
+  }
+
+  const deleteFeedback = () => {
+    console.log('delete feedback');
+  }
+
+  const editFeedback = () => {
+    console.log('edit feedback');
+  }
+
   return (
     <Router>
       <Header />
@@ -25,14 +38,14 @@ function App() {
 
           <Route exact path='/' element={
             <>
-              <FeedbackForm />
+              <FeedbackForm addFeedback={addFeedback} />
               <FeedbackStats items={items} />
-              <FeedbackList items={items} />
+              <FeedbackList items={items} deleteFeedback={deleteFeedback} editFeedback={editFeedback} />
             </>
           }> </Route>
 
           <Route path='/about' element={<AboutPage />}> </Route>
-          
+
         </Routes>
         <AboutIconLink />
 
